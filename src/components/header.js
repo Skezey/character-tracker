@@ -64,7 +64,12 @@ export default function Header() {
 
             {!isLoading && user && (
               <>
-                <button className="button is-light">{user.name}</button>
+                <button
+                className="button is-light"
+                >
+                {user.picture && <img src={user.picture} alt="My Avatar" />}
+                {user.name}
+                </button>
                 <button
                   onClick={() => logout({ returnTo: window.location.origin })}
                   className="button is-primary"
