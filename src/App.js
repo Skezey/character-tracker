@@ -15,6 +15,10 @@ import CharacterIndex from './components/CharacterIndex';
 import SpellIndex from './components/SpellIndex';
 import ItemIndex from './components/ItemIndex';
 import ClassIndex from './components/ClassIndex';
+import Footer from './components/Footer';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import ContactUs from './components/ContactUs';
+import Profile from './components/Profile';
 
 function App() {
   const {
@@ -35,10 +39,14 @@ function App() {
             <Route path='/spells' component={SpellIndex} />
             <Route path='/items' component={ItemIndex} />
             <Route path='/classes' component={ClassIndex} />
+            <Route path='/privacy' component={PrivacyPolicy} />
+            <Route path='/contact' component={ContactUs} />
+            <Route path='/profile' component={Profile} />
             <Route component={NoMatch} />
           </Switch>
         </div>
       </Router>
+      <Footer />
     </>
   );
 }

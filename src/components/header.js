@@ -6,6 +6,7 @@ import './styles/Header.css';
 export default function Header() {
   const { isLoading, user, loginWithRedirect, logout } = useAuth0();
 
+
   return(
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
@@ -13,7 +14,13 @@ export default function Header() {
           <img src="/dndlogo.png" width="112" height="28" />
         </a>
 
-        <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a
+        role="button"
+        className="navbar-burger burger"
+        aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample"
+
+        >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -65,9 +72,13 @@ export default function Header() {
             {!isLoading && user && (
               <>
                 <button
+                onClick={() => window.location.href = '/profile'}
                 className="button is-light"
                 >
-                {user.picture && <img src={user.picture} alt="My Avatar" />}
+                {
+                  user.picture &&
+                  <img className="userImg" src={user.picture} alt="My Avatar" />
+                }
                 {user.name}
                 </button>
                 <button
