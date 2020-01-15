@@ -3,7 +3,8 @@ const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLInt,
-  GraphQLSchema
+  GraphQLSchema,
+  GraphQLList
 } = graphql
 const axios = require('axios')
 
@@ -48,6 +49,18 @@ const ItemType = new GraphQLObjectType({
   }
 })
 
+
+
+const ClassType = new GraphQLObjectType({
+  name: "CharacterClass",
+  fields: {
+    _id: {type: GraphQLString},
+    index: {type: GraphQLString},
+    name: {type: GraphQLString},
+    hit_die: { type: GraphQLInt}
+  }
+})
+
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
@@ -72,6 +85,14 @@ const RootQuery = new GraphQLObjectType({
       args: { index: { type: GraphQLString }},
       resolve(parentValue, { index }) {
         return axios.get(`http://www.dnd5eapi.co/api/equipment/${index}`)
+        .then(res => res.data)
+      }
+    },
+    character_class: {
+      type: ClassType,
+      args: { index: { type: GraphQLString }},
+      resolve(parentValue, { index }) {
+        return axios.get(`http://www.dnd5eapi.co/api/classes/${index}`)
         .then(res => res.data)
       }
     }
