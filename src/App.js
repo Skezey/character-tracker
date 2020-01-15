@@ -3,6 +3,7 @@ import Home from './components/home'
 import 'bulma/css/bulma.css'
 import { useAuth0 } from './contexts/auth0-context';
 import Header from './components/header';
+import Sidebar from './components/sidebar';
 
 function App() {
   const {isLoading, user, loginWithRedirect, logout } = useAuth0;
@@ -10,6 +11,7 @@ function App() {
   return (
     <>
     <Header />
+      <Sidebar />
     <div className="hero is-info is-fullheight">
       <div className="hero-body">
         <div className="container has-text-centered">
