@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Home = () => (
+const SpellIndex = () => (
   <div className="hero is-info is-fullheight">
     <div className="hero-body">
       <div className="container has-text-centered">
-        HOME
+        SpellIndex
       </div>
     </div>
   </div>
 )
 
-export default Home;
+export default SpellIndex;

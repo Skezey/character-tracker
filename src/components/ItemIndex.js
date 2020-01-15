@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Home = () => (
+const ItemIndex = () => (
   <div className="hero is-info is-fullheight">
     <div className="hero-body">
       <div className="container has-text-centered">
-        HOME
+        ItemIndex
       </div>
     </div>
   </div>
 )
 
-export default Home;
+export default ItemIndex;

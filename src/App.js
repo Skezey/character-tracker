@@ -1,22 +1,44 @@
 import React from 'react';
-import Home from './components/home'
 import 'bulma/css/bulma.css'
 import { useAuth0 } from './contexts/auth0-context';
-import Header from './components/header';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
+
+import Home from './components/Home'
+import Header from './components/Header';
+import NoMatch from './components/NoMatch';
+import CharacterIndex from './components/CharacterIndex';
+import SpellIndex from './components/SpellIndex';
+import ItemIndex from './components/ItemIndex';
+import ClassIndex from './components/ClassIndex';
 
 function App() {
-  const {isLoading, user, loginWithRedirect, logout } = useAuth0;
+  const {
+    isLoading,
+    user,
+    loginWithRedirect,
+    logout
+  } = useAuth0;
 
   return (
     <>
-    <Header />
-    <div className="hero is-info is-fullheight">
-      <div className="hero-body">
-        <div className="container has-text-centered">
-          SOON
+      <Header />
+      <Router>
+        <div>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/characters' component={CharacterIndex} />
+            <Route path='/spells' component={SpellIndex} />
+            <Route path='/items' component={ItemIndex} />
+            <Route path='/classes' component={ClassIndex} />
+            <Route component={NoMatch} />
+          </Switch>
         </div>
-      </div>
-    </div>
+      </Router>
     </>
   );
 }

@@ -1,61 +1,61 @@
 
 import React from 'react';
 import { useAuth0 } from '../contexts/auth0-context';
-import './styles/Header.css'
+import './styles/Header.css';
 
 export default function Header() {
   const { isLoading, user, loginWithRedirect, logout } = useAuth0();
 
   return(
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+    <nav className="navbar" role="navigation" aria-label="main navigation">
+      <div className="navbar-brand">
+        <a className="navbar-item" href="/">
+          <img src="/dndlogo.png" width="112" height="28" />
         </a>
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item">
+      <div id="navbarBasicExample" className="navbar-menu">
+        <div className="navbar-start">
+          <a href="/" className="navbar-item">
             Home
           </a>
 
-          <a class="navbar-item">
-            Documentation
+          <a href='/characters' className="navbar-item">
+            Characters
           </a>
 
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
+          <div className="navbar-item has-dropdown is-hoverable">
+            <a className="navbar-link">
               More
             </a>
 
-            <div class="navbar-dropdown">
-              <a class="navbar-item">
-                About
+            <div className="navbar-dropdown">
+              <a href="/spells" className="navbar-item">
+                Spells
               </a>
-              <a class="navbar-item">
-                Jobs
+              <a href="/items" className="navbar-item">
+                Items
               </a>
-              <a class="navbar-item">
-                Contact
+              <a href="/classes" className="navbar-item">
+                Classes
               </a>
-              <hr class="navbar-divider" />
-              <a class="navbar-item">
+              <hr className="navbar-divider" />
+              <a href="#" className="navbar-item">
                 Report an issue
               </a>
             </div>
           </div>
         </div>
 
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
+        <div className="navbar-end">
+          <div className="navbar-item">
+            <div className="buttons">
             {!isLoading && !user && (
               <button onClick={loginWithRedirect} className="button is-primary">
                 Login
