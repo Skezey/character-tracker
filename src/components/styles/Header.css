@@ -1,0 +1,15 @@
+button {
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.navbar {
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  width: 100%
+
+}
