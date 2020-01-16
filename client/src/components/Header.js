@@ -1,11 +1,10 @@
 
-import React from 'react';
+import React, { Component } from 'react';
 import { useAuth0 } from '../contexts/auth0-context';
 import './styles/Header.css';
 
 export default function Header() {
   const { isLoading, user, loginWithRedirect, logout } = useAuth0();
-
 
   return(
     <nav className="navbar" role="navigation" aria-label="main navigation">
