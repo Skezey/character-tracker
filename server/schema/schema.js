@@ -49,8 +49,6 @@ const ItemType = new GraphQLObjectType({
   }
 })
 
-
-
 const ClassType = new GraphQLObjectType({
   name: "CharacterClass",
   fields: {
